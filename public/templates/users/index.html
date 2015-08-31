@@ -1,0 +1,25 @@
+<br/>
+<div class="row">
+    <div class="col-md-12">
+        <a class="btn btn-primary" href="#/users/new">Create a user</a>
+        <h3 class="block">Users</h3>
+        <table class="table table-striped">
+            <tr>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th></th>
+            </tr>
+            <tr ng-hide="users.length" >
+                <td colspan="5">No users found, Please create one.</td>
+            </tr>
+            <tr ng-show="users.length" ng-repeat="user in users">
+                <td>{{user.firstname}}</td>
+                <td>{{user.lastname}}</td>
+
+                <td>
+                    <a href="#/users/{{user.id}}/edit">Edit</a> | <a href="" ng-click="deleteUser(user.id)">Remove</a>
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>
